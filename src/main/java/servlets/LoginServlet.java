@@ -26,6 +26,7 @@ public class LoginServlet extends HttpServlet {
 		for (User u : users) {
 			if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
 				found = true;
+				break;
 			}
 		}
 		

@@ -7,10 +7,8 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import dao.UserDao;
+import model.City;
 import model.User;
-import service.UserService;
-import serviceimpl.UserServiceImpl;
 
 
 @WebListener("Configuration")
@@ -19,12 +17,15 @@ public class StartupContext implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		List<User> users = new ArrayList<>();
-		users.add(new User("Admin", "admin", "admin123"));
-		users.add(new User("John Smith", "john", "john123"));
-		// Servlet Context - one instance per application
+		users.add(new User("Ana", "ana", "ana123"));
+		users.add(new User("Ivan", "ivan", "ivan123"));
 		sce.getServletContext().setAttribute("users", users);
-		UserService userService = new UserServiceImpl(new UserDao());
-		sce.getServletContext().setAttribute("userService", userService);
+		
+		List<City> cities = new ArrayList<>();
+		cities.add(new City(11000,"Beograd"));
+		cities.add(new City(34000,"Kragujevac"));
+		cities.add(new City(11300,"Smederevo"));
+		sce.getServletContext().setAttribute("cities", cities);
 	}
 
 	@Override

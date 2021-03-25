@@ -2,35 +2,35 @@ package model;
 
 public class City {
 
-	private long postanskiBroj;
-	private String naziv;
-	public City(long postanskiBroj, String naziv) {
+	private long postalCode;
+	private String name;
+	public City(long postalCode, String name) {
 		super();
-		this.postanskiBroj = postanskiBroj;
-		this.naziv = naziv;
+		this.postalCode = postalCode;
+		this.name = name;
 	}
 	public long getPostanskiBroj() {
-		return postanskiBroj;
+		return postalCode;
 	}
-	public void setPostanskiBroj(long postanskiBroj) {
-		this.postanskiBroj = postanskiBroj;
+	public void setPostanskiBroj(long postalCode) {
+		this.postalCode = postalCode;
 	}
 	public String getNaziv() {
-		return naziv;
+		return name;
 	}
-	public void setNaziv(String naziv) {
-		this.naziv = naziv;
+	public void setNaziv(String name) {
+		this.name = name;
 	}
 	@Override
 	public String toString() {
-		return "City [postanskiBroj=" + postanskiBroj + ", naziv=" + naziv + "]";
+		return "City [postalCode=" + postalCode + ", name=" + name + "]";
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((naziv == null) ? 0 : naziv.hashCode());
-		result = prime * result + (int) (postanskiBroj ^ (postanskiBroj >>> 32));
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + (int) (postalCode ^ (postalCode >>> 32));
 		return result;
 	}
 	@Override
@@ -42,12 +42,12 @@ public class City {
 		if (getClass() != obj.getClass())
 			return false;
 		City other = (City) obj;
-		if (naziv == null) {
-			if (other.naziv != null)
+		if (name == null) {
+			if (other.name != null)
 				return false;
-		} else if (!naziv.equals(other.naziv))
+		} else if (!name.equals(other.name))
 			return false;
-		if (postanskiBroj != other.postanskiBroj)
+		if (postalCode != other.postalCode)
 			return false;
 		return true;
 	}

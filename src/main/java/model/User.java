@@ -2,14 +2,14 @@ package model;
 
 public class User {
 	private final String name;
-	private final String surName;
+	private final String surname;
 	private final String username;
 	private final String password;
 
-	public User(String name, String surName, String username, String password) {
+	public User(String name, String surname, String username, String password) {
 		super();
 		this.name = name;
-		this.surName = surName;
+		this.surname = surname;
 		this.username = username;
 		this.password = password;
 	}
@@ -36,7 +36,7 @@ public class User {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((surName == null) ? 0 : surName.hashCode());
+		result = prime * result + ((surname == null) ? 0 : surname.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
@@ -57,10 +57,10 @@ public class User {
 		} else if (!name.equals(other.name))
 			return false;
 		
-		if (surName == null) {
-			if (other.surName != null)
+		if (surname == null) {
+			if (other.surname != null)
 				return false;
-		} else if (!surName.equals(other.surName))
+		} else if (!surname.equals(other.surname))
 			return false;
 		
 		if (password == null) {
@@ -78,7 +78,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + ",surName= "+surName+" username=" + username + ", password=" + password + "]";
+		return "User [name=" + name + ",surname= "+surname+" username=" + username + ", password=" + password + "]";
 	}
 
 }

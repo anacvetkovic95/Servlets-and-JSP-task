@@ -1,7 +1,5 @@
 package context;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -9,23 +7,25 @@ import javax.servlet.annotation.WebListener;
 
 import model.City;
 import model.User;
+import repository.CityRepository;
+import repository.UserRepository;
 
 
-@WebListener("Configuration")
+@WebListener
 public class StartupContext implements ServletContextListener {
 
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
-		List<User> users = new ArrayList<>();
-		users.add(new User("Ana","Cvetkovic", "ana", "ana123"));
-		users.add(new User("Ivan", "Jovkovic", "ivan", "ivan123"));
-		sce.getServletContext().setAttribute("users", users);
-		
-		List<City> cities = new ArrayList<>();
-		cities.add(new City(11000,"Beograd"));
-		cities.add(new City(34000,"Kragujevac"));
-		cities.add(new City(11300,"Smederevo"));
-		sce.getServletContext().setAttribute("cities", cities);
+		UserRepository userRepository = new UserRepository();
+    	userRepository.save(new User("Ana","Cvetkovic","ana","ana123"));
+    	userRepository.save(new User("Ivan","Jovkovic","ivan","ivan123"));
+    	
+    	CityRepository cityRepository = new CityRepository();
+    	cityRepository.save(new City(11000,"Beograd"));
+    	cityRepository.save(new City(34000, "Kragujevac"));
+    	
+    	sce.getServletContext().setAttribute("userRepository", userRepository);
+    	sce.getServletContext().setAttribute("cityRepository", cityRepository);
 	}
 
 	@Override

@@ -17,8 +17,8 @@ public class StartupContext implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		List<User> users = new ArrayList<>();
-		users.add(new User("Ana", "ana", "ana123"));
-		users.add(new User("Ivan", "ivan", "ivan123"));
+		users.add(new User("Ana","Cvetkovic", "ana", "ana123"));
+		users.add(new User("Ivan", "Jovkovic", "ivan", "ivan123"));
 		sce.getServletContext().setAttribute("users", users);
 		
 		List<City> cities = new ArrayList<>();

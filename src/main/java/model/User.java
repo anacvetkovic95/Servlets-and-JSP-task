@@ -19,7 +19,7 @@ public class User {
 	}
 	
 	public String getSurName() {
-		return name;
+		return surname;
 	}
 
 
@@ -78,7 +78,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + ",surname= "+surname+" username=" + username + ", password=" + password + "]";
+		return "User [name=" + name + ", surname= "+surname+" username=" + username + ", password=" + password + "]";
 	}
 
 }

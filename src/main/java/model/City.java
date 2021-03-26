@@ -4,21 +4,26 @@ public class City {
 
 	private long postalCode;
 	private String name;
+	
+	public City() {
+		
+	}
+	
 	public City(long postalCode, String name) {
 		super();
 		this.postalCode = postalCode;
 		this.name = name;
 	}
-	public long getPostanskiBroj() {
+	public long getPostalCode() {
 		return postalCode;
 	}
-	public void setPostanskiBroj(long postalCode) {
+	public void setPostalCode(long postalCode) {
 		this.postalCode = postalCode;
 	}
-	public String getNaziv() {
+	public String getName() {
 		return name;
 	}
-	public void setNaziv(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	@Override
